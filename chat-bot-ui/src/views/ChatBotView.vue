@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import MessageCard from '@/components/MessageCard.vue'
-import { Message } from '@/scripts/Message'
+import type { Message } from '@/scripts/Message'
 
 const testText =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum arcu massa, malesuada vel dignissim ac, euismod a mauris. Sed ultrices ante sit amet urna luctus, a tincidunt velit commodo. Proin sem nibh, mollis venenatis risus lacinia, laoreet scelerisque arcu. Cras nec enim ut lacus egestas cursus. Sed eu sapien enim. Nam consectetur egestas justo. Integer nisi nisi, ultrices eu lobortis id, blandit vitae lectus. Quisque vitae quam scelerisque, semper ligula nec, lacinia nisl.'

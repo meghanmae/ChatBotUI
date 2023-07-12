@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { Message } from '@/scripts/Message'
+import type { Message } from '@/scripts/Message'
 
 defineProps<{
   message: Message

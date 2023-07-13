@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container align="center">
     <MessageCard :message="message" v-for="(message, i) in messages" :key="i" />
 
     <MessageCard

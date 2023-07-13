@@ -1,5 +1,5 @@
 <template>
-  <v-card :color="message.color" class="my-5">
+  <v-card align="left" :color="message.color" class="my-5" max-width="1000">
     <v-row dense class="pa-5" align="center">
       <v-col cols="auto">
         <v-avatar color="primary" size="large">

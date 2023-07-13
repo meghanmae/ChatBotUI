@@ -39,10 +39,22 @@ const animatedMessage = ref<Message>({
   color: 'botMessage'
 })
 const currentMessage = ref('')
-
+const shouldAutoScroll = ref(true)
 const typingInterval = ref<any>(null)
 
+window.onscroll = function () {
+  shouldAutoScroll.value = false
+}
+
+function autoScroll() {
+  if (shouldAutoScroll.value) {
+    // Always scroll the user to the bottom of the screen while typing
+    document.getElementById('animated-block')?.scrollIntoView()
+  }
+}
+
 async function think() {
+  autoScroll()
   thinking.value = true
   await new Promise((resolve) =>
     setTimeout(() => {
@@ -54,6 +66,7 @@ async function think() {
 
 function animate(text: string, delay: number) {
   let currentIndex = 0
+  shouldAutoScroll.value = true
 
   typingInterval.value = setInterval(() => {
     if (currentIndex === text.length) {
@@ -63,8 +76,7 @@ function animate(text: string, delay: number) {
       currentIndex++
     }
 
-    // Always scroll the user to the bottom of the screen while typing
-    document.getElementById('animated-block')?.scrollIntoView()
+    autoScroll()
   }, delay)
 }
 
